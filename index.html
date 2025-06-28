@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Personal Lab of Polly Wang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="terminal-title">polly@lab:~$ ./personal_lab.sh</div>
+        </div>
+        
+        <div class="terminal">
+            <div class="command-line">
+                <span class="prompt">polly@lab:~$</span>
+                <span class="glitch" data-text="welcome to my lab">welcome to my lab</span>
+                <span class="cursor"></span>
+            </div>
+            
+            <div class="welcome-text">
+                I build, break, learn, and loop. This is where curiosity becomes code.
+            </div>
+            
+            <div class="nav-commands">
+                <div class="nav-item" onclick="scrollToSection('experiments')">
+                    <div class="command">./run_experiments.sh</div>
+                    <div class="description">Current active experiments and ongoing research</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('logs')">
+                    <div class="command">cat learning_logs.txt</div>
+                    <div class="description">Raw documentation of my learning journey</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('timeline')">
+                    <div class="command">git log --curiosity</div>
+                    <div class="description">Timeline of discoveries and interests</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('toolbox')">
+                    <div class="command">ls -la ~/toolbox/</div>
+                    <div class="description">My digital and mental debugging arsenal</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('thoughts')">
+                    <div class="command">grep -r "questions" notes/</div>
+                    <div class="description">Open questions and thought experiments</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('setup')">
+                    <div class="command">systemctl status lab_setup</div>
+                    <div class="description">Current hardware and software environment</div>
+                </div>
+            </div>
+        </div>
+        
+        <section id="experiments" class="section">
+            <h2 class="section-title">🔬 Current Experiments</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Zigbee2MQTT Deep Dive</div>
+                    <div class="card-status status-active">ACTIVE</div>
+                    <div class="card-content">
+                        Exploring device coordination patterns and network topology optimization. 
+                        Currently debugging phantom device disconnections on Pi4 setup.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">UE5 Blueprint Logic</div>
+                    <div class="card-status status-active">LEARNING</div>
+                    <div class="card-content">
+                        Diving into visual scripting paradigms. Fascinating how node-based programming 
+                        changes my thinking about control flow and state management.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">CAN Bus Message Analysis</div>
+                    <div class="card-status status-paused">PAUSED</div>
+                    <div class="card-content">
+                        Script to monitor CAN messages on Pi. Hit a wall with timing precision. 
+                        Need to revisit with real-time kernel approach.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">MQTT Broker Comparison</div>
+                    <div class="card-status status-complete">COMPLETE</div>
+                    <div class="card-content">
+                        Benchmarked Mosquitto vs VerneMQ vs EMQX on Raspberry Pi. 
+                        Results documented in /experiments/mqtt-bench/
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="logs" class="section">
+            <h2 class="section-title">🧠 Learning Logs</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Today I Learned: Protocol Buffers</div>
+                    <div class="card-content">
+                        More efficient than JSON for embedded systems. Tried implementing on BeagleBone. 
+                        Serialization overhead still confusing. Will Google more tomorrow.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Thermal Control Loop Insights</div>
+                    <div class="card-content">
+                        PID tuning is an art form. Kp=0.8, Ki=0.2, Kd=0.1 works for my test setup. 
+                        Overshoot still happens during rapid temp changes. Need better derivative filtering.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Embedded Security Rabbit Hole</div>
+                    <div class="card-content">
+                        Started with simple encryption, ended up reading papers on side-channel attacks. 
+                        How do I even begin to think about timing attack prevention?
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="timeline" class="section">
+            <h2 class="section-title">🧭 Curiosity Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-title">Started exploring embedded security protocols</div>
+                    <div class="card-content">
+                        Discovered the beautiful complexity of secure communication in resource-constrained environments. 
+                        Currently obsessing over key exchange mechanisms.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-title">Dabbled in thermal sensor control loops</div>
+                    <div class="card-content">
+                        Built temperature controller on BeagleBone in C. Learned that hardware 
+                        timing constraints make software engineering assumptions fall apart.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-title">Fell into HVAC systems</div>
+                    <div class="card-content">
+                        What started as a simple thermostat project became a deep dive into 
+                        building automation protocols. BACnet is wild.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-title">First embedded system revelation</div>
+                    <div class="card-content">
+                        Realized that software without hardware constraints felt incomplete. 
+                        Started with Arduino, never looked back.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="toolbox" class="section">
+            <h2 class="section-title">🧰 Digital Toolbox</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Languages I Think In</div>
+                    <div class="card-content">
+                        <strong>C:</strong> For when performance matters<br>
+                        <strong>Python:</strong> For when I want to prototype fast<br>
+                        <strong>JavaScript:</strong> For when I need things to just work<br>
+                        <strong>Assembly:</strong> For when I need to understand what's really happening
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Debugging Philosophy</div>
+                    <div class="card-content">
+                        I always start with oscilloscope traces. If you can't see the signal, 
+                        you can't trust the software. Print statements are my second best friend.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Things I Google More Than I Should</div>
+                    <div class="card-content">
+                        • "How to properly debounce hardware interrupts"<br>
+                        • "CAN bus termination resistor values"<br>
+                        • "Why is my I2C bus hanging"<br>
+                        • "Proper grounding techniques for mixed-signal PCB"
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="thoughts" class="section">
+            <h2 class="section-title">📓 Open Questions</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Reliability vs. Control Logic</div>
+                    <div class="card-content">
+                        Is system reliability more about perfect control algorithms or intuitive user design? 
+                        Every HVAC system I've debugged suggests it's the latter.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">The Real-Time Paradox</div>
+                    <div class="card-content">
+                        Why does adding more processing power sometimes make real-time systems less predictable? 
+                        Investigating relationship between computational complexity and timing guarantees.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Protocol Evolution</div>
+                    <div class="card-content">
+                        How do we design communication protocols that can evolve without breaking 
+                        deployed systems? Version negotiation in embedded systems is fascinating.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="setup" class="section">
+            <h2 class="section-title">⚙️ Current Lab Setup</h2>
+            <div class="setup-grid">
+                <div class="setup-item">
+                    <div class="setup-icon">🔧</div>
+                    <div class="setup-name">Primary IDE</div>
+                    <div class="setup-desc">VS Code + Platform.IO for embedded, CLion for systems programming</div>
+                </div>
+                <div class="setup-item">
+                    <div class="setup-icon">🖥️</div>
+                    <div class="setup-name">Hardware Lab</div>
+                    <div class="setup-desc">Raspberry Pi 4 + CAN hat, BeagleBone Black, Various dev boards</div>
+                </div>
+                <div class="setup-item">
+                    <div class="setup-icon">📡</div>
+                    <div class="setup-name">Test Equipment</div>
+                    <div class="setup-desc">Rigol DS1054Z oscilloscope, Multimeter, Logic analyzer</div>
+                </div>
+                <div class="setup-item">
+                    <div class="setup-icon">🌐</div>
+                    <div class="setup-name">Network Tools</div>
+                    <div class="setup-desc">Wireshark, nmap, mosquitto_pub/sub, CAN utils</div>
+                </div>
+                <div class="setup-item">
+                    <div class="setup-icon">📚</div>
+                    <div class="setup-name">Learning Resources</div>
+                    <div class="setup-desc">Datasheets, IEEE papers, Stack Overflow, GitHub repos</div>
+                </div>
+                <div class="setup-item">
+                    <div class="setup-icon">☕</div>
+                    <div class="setup-name">Fuel</div>
+                    <div class="setup-desc">Coffee, curiosity, and the occasional breakthrough moment</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
